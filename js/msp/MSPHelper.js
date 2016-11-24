@@ -19,7 +19,7 @@ function MspHelper () {
     'TELEMETRY_SMARTPORT': 5,
     'RX_SERIAL': 6,
     'BLACKBOX': 7,
-    'TELEMETRY_MAVLINK': 8,
+    'TELEMETRY_MAVLINK': 9,
     'TELEMETRY_ESC': 10
   };
 }
@@ -392,7 +392,7 @@ MspHelper.prototype.process_data = function(dataHandler) {
             BF_CONFIG.board_align_pitch = data.read16(); // -180 - 360
             BF_CONFIG.board_align_yaw = data.read16(); // -180 - 360
             BF_CONFIG.currentscale = data.read16();
-            BF_CONFIG.currentoffset = data.readU16();
+            BF_CONFIG.currentoffset = data.read16();
 
             updateTabList(BF_CONFIG.features);
 
